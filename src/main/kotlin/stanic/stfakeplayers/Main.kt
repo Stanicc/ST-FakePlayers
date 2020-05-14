@@ -42,36 +42,6 @@ class Main : JavaPlugin() {
                     handlePing(event.packet.serverPings.read(0))
                 }
             })
-
-        /**
-        command("spawnfake") { sender, args ->
-            if (sender !is Player) return@command
-
-            val craftServer = server as CraftServer
-            val craftWorld = (sender.location.world as CraftWorld).handle
-
-            val entity = EntityPlayer(craftServer.server, craftWorld, GameProfile(UUID.randomUUID(), args[0]), PlayerInteractManager(craftWorld))
-
-            entity.setLocation(sender.location.x, sender.location.y, sender.location.z, sender.location.yaw, sender.location.pitch)
-
-            Bukkit.getOnlinePlayers().forEach {
-                val connection = (it as CraftPlayer).handle.playerConnection
-                connection.sendPacket(PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, entity))
-                connection.sendPacket(PacketPlayOutNamedEntitySpawn(entity))
-            }
-
-            GlobalScope.launch {
-                delay(2000)
-                sender.sendMessage("Disconnected")
-                Bukkit.getOnlinePlayers().forEach {
-                    val connection = (it as CraftPlayer).handle.playerConnection
-                    connection.sendPacket(PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.REMOVE_PLAYER, entity))
-                    connection.sendPacket(PacketPlayOutEntityDestroy(entity.id))
-                    entity.bukkitEntity.remove()
-                }
-            }
-        }
-        **/
     }
 
     fun handlePing(ping: WrappedServerPing) {
