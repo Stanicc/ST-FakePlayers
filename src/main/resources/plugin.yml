@@ -1,0 +1,6 @@
+name: ST-FakePlayers
+version: 1.0
+main: stanic.stfakeplayers.Main
+author: Stanic
+commands:
+  fake:

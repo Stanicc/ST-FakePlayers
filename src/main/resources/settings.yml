@@ -1,0 +1,22 @@
+Config:
+  permission: "stfakeplayers.use"
+
+Messages:
+  onlyInGame: "&cUse this only in-game"
+  notHasPermission: "&cYou don't have permission to use this"
+  notFound: "&cThis fake not exists"
+  alreadyExists: "&cThis fake already exists"
+  notHasFakes: "&cThis server don't has fakes"
+  argsEmpty:
+    - ""
+    - "&e/fake create (Name) &8- &fCreate a fake"
+    - "&e/fake remove (Name) &8- &fRemove a fake"
+    - "&e/fake list &8- &fShow the fake list"
+    - ""
+  fakeCreated:
+    - "&aFake &f{fake} &acreated!"
+  fakeRemoved:
+    - "&aFake &f{fake} &aremoved!"
+  fakeList:
+    - "&eThere are &f{amount} &eof fakes:"
+    - "&7{fakes}"

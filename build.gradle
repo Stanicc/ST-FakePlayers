@@ -1,9 +1,14 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'application'
 }
 
-group 'stanic.stbot'
+group 'stanic.stfakeplayers'
 version '1.0-SNAPSHOT'
+
+ext.main = 'Main'
+mainClassName = "$group.${main}"
 
 repositories {
     jcenter()
@@ -11,14 +16,18 @@ repositories {
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
     maven { url "https://jcenter.bintray.com" }
     maven { url "https://jitpack.io" }
+    maven { url "https://repo.dmulloy2.net/nexus/repository/public/" }
     mavenLocal()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5"
-    implementation "com.github.Steveice10:MCProtocolLib:1.15-1"
+    implementation files('C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\ST-Utils.jar', 'C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\ST-Utils.jar')
+    implementation files('C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\PacketWrapper.jar', 'C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\PacketWrapper.jar')
+    compileOnly files('C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\spigot-1.8.8-R0.1-SNAPSHOT-latest.jar', 'C:\\Users\\Gabi Stanic\\PROJETOS\\IMPORTS\\spigot-1.8.8-R0.1-SNAPSHOT-latest.jar')
     compileOnly "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
+    compileOnly "com.comphenix.protocol:ProtocolLib:4.5.0"
 }
 
 compileKotlin {
